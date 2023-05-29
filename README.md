@@ -2,6 +2,8 @@
 
 The NVIDIA Omniverse GoBilda Extension is a work-in-progress open source extension that aims to provide universal scene description components for the GoBilda platform. The extension is designed to assist students, engineers, and educators in building prototypes of robots by offering a physics environment and useful metrics such as cost.
 
+![Preview_Image](exts/goBilda/data/preview.png)
+
 ### Features
 
 - Universal scene description components for the GoBilda platform
