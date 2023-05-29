@@ -10,7 +10,7 @@ description="An extension to help students, artists, educators and engineers mod
 readme  = "docs/README.md"
 
 # URL of the extension source repository.
-repository = ""
+repository = "https://github.com/JJGIV2010/goBilda-extension.git"
 
 # One of categories for UI.
 category = "Simulation"
