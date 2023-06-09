@@ -1,0 +1,48 @@
+#usda 1.0
+(
+    customLayerData = {
+        dictionary audioSettings = {
+            double dopplerLimit = 2
+            double dopplerScale = 1
+            string enableDistanceDelay = "off"
+            string enableDoppler = "off"
+            string enableInterauralDelay = "off"
+            double nonSpatialTimeScale = 1
+            double spatialTimeScale = 1
+            double speedOfSound = 340
+        }
+        dictionary cameraSettings = {
+            dictionary Front = {
+                double3 position = (0, 0.9958556184019436, 50000.57000005245)
+                double radius = 6.170668295105465
+            }
+            dictionary Perspective = {
+                double3 position = (-2.4099782313342883, 2.9528258693408826, 7.615518477316447)
+                double3 target = (1.8210848132815105, 3.1685691487545387, -7.065197905787031)
+            }
+            dictionary Right = {
+                double3 position = (-50002.71499995235, 0, -1.1102833097343357e-11)
+                double radius = 500
+            }
+            dictionary Top = {
+                double3 position = (-4.329866876785544e-12, 50001.00000002835, 1.1102452290862785e-11)
+                double radius = 500
+            }
+            string boundCamera = "/OmniverseKit_Persp"
+        }
+        dictionary omni_layer = {
+            string authoring_layer = "./_2000_0002_PhysicsLayer.usda"
+        }
+        dictionary renderSettings = {
+        }
+    }
+    defaultPrim = "Root"
+    doc = """Generated from Composed Stage of root layer C:\\Users\\JJGIV\\OneDrive\\Documents\\goBildaLibrary\\2000_servos\\usdFiles\\_2000_0002.usdc
+"""
+    metersPerUnit = 0.01
+    subLayers = [
+        @./_2000_0002_PhysicsLayer.usda@
+    ]
+    upAxis = "Y"
+)
+
