@@ -93,7 +93,7 @@ class GoBildaExtension(omni.ext.IExt):
         """
         ext_manager = omni.kit.app.get_app().get_extension_manager()
         ext_path = ext_manager.get_extension_path(self.extensionID)
-        primSourceLocation = ext_path + "/data/" + component + ".usd"
+        primSourceLocation = ext_path + "/data/models/" + component + ".usd"
         omni.kit.commands.execute("CreateReference",
                                   path_to=Sdf.Path(f"/World/Components/{component}"),
                                   # Prim path for where to create the reference

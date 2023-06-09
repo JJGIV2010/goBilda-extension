@@ -1,0 +1,144 @@
+#usda 1.0
+(
+    defaultPrim = "_1102"
+)
+
+def "_1102" (
+    variants = {
+        string _1102_Variants = "_0016mm"
+    }
+    prepend variantSets = "_1102_Variants"
+)
+{
+    variantSet "_1102_Variants" = {
+        "_0016mm" {
+            def "_0016mm" (
+                prepend references = @./_1102_0016.usda@
+            )
+            {
+            }
+
+        }
+        "_0024mm" {
+            def "_0024mm" (
+                prepend references = @./_1102_0024.usda@
+            )
+            {
+            }
+
+        }
+        "_0032mm" {
+            def "_0032mm" (
+                prepend references = @./_1102_0032.usda@
+            )
+            {
+            }
+
+        }
+        "_0040mm" {
+            def "_0040mm" (
+                prepend references = @./_1102_0040.usda@
+            )
+            {
+            }
+
+        }
+        "_0048mm" {
+            def "_0048mm" (
+                prepend references = @./_1102_0048.usda@
+            )
+            {
+            }
+
+        }
+        "_0057mm" {
+            def "_0057mm" (
+                prepend references = @./_1102_0057.usda@
+            )
+            {
+            }
+
+        }
+        "_0064mm" {
+            def "_0064mm" (
+                prepend references = @./_1102_0064.usda@
+            )
+            {
+            }
+
+        }
+        "_0072mm" {
+            def "_0072mm" (
+                prepend references = @./_1102_0072.usda@
+            )
+            {
+            }
+
+        }
+        "_0081mm" {
+            def "_0081mm" (
+                prepend references = @./_1102_0081.usda@
+            )
+            {
+            }
+
+        }
+        "_0088mm" {
+            def "_0088mm" (
+                prepend references = @./_1102_0088.usda@
+            )
+            {
+            }
+
+        }
+        "_0096mm" {
+            def "_0096mm" (
+                prepend references = @./_1102_0096.usda@
+            )
+            {
+            }
+
+        }
+        "_0104mm" {
+            def "_0104mm" (
+                prepend references = @./_1102_0104.usda@
+            )
+            {
+            }
+
+        }
+        "_0120mm" {
+            def "_0120mm" (
+                prepend references = @./_1102_0120.usda@
+            )
+            {
+            }
+
+        }
+        "_0136mm" {
+            def "_0136mm" (
+                prepend references = @./_1102_0136.usda@
+            )
+            {
+            }
+
+        }
+        "_0152mm" {
+            def "_0152mm" (
+                prepend references = @./_1102_0152.usda@
+            )
+            {
+            }
+
+        }
+        "_0168mm" {
+            def "_0168mm" (
+                prepend references = @./_1102_0168.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+
