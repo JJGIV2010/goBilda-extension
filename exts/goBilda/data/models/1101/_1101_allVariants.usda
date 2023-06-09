@@ -1,0 +1,64 @@
+#usda 1.0
+(
+    defaultPrim = "_1101"
+)
+
+def "_1101" (
+    variants = {
+        string _1101_Variants = "_0152mm"
+    }
+    prepend variantSets = "_1101_Variants"
+)
+{
+    variantSet "_1101_Variants" = {
+        "_0080mm" {
+            def "_0080mm" (
+                prepend references = @C:/Users/JJGIV/OneDrive/Documents/goBildaLibrary/1101_uBeam/usdFiles/_1101_0080.usda@
+            )
+            {
+            }
+
+        }
+        "_0088mm" {
+            def "_0088mm" (
+                prepend references = @C:/Users/JJGIV/OneDrive/Documents/goBildaLibrary/1101_uBeam/usdFiles/_1101_0088.usda@
+            )
+            {
+            }
+
+        }
+        "_0096mm" {
+            def "_0096mm" (
+                prepend references = @C:/Users/JJGIV/OneDrive/Documents/goBildaLibrary/1101_uBeam/usdFiles/_1101_0096.usda@
+            )
+            {
+            }
+
+        }
+        "_0104mm" {
+            def "_0104mm" (
+                prepend references = @C:/Users/JJGIV/OneDrive/Documents/goBildaLibrary/1101_uBeam/usdFiles/_1101_0104.usda@
+            )
+            {
+            }
+
+        }
+        "_0136mm" {
+            def "_0136mm" (
+                prepend references = @C:/Users/JJGIV/OneDrive/Documents/goBildaLibrary/1101_uBeam/usdFiles/_1101_0136.usda@
+            )
+            {
+            }
+
+        }
+        "_0152mm" {
+            def "_0152mm" (
+                prepend references = @C:/Users/JJGIV/OneDrive/Documents/goBildaLibrary/1101_uBeam/usdFiles/_1101_0152.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+
