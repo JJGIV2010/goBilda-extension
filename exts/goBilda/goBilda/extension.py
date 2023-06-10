@@ -12,6 +12,9 @@ from pxr import Sdf
 # instantiated when extension gets enabled and `on_startup(ext_id)` will be called. Later when extension gets disabled
 # on_shutdown() is called.
 class GoBildaExtension(omni.ext.IExt):
+    def __init__(self):
+        self.extensionID = None
+
     def on_startup(self, ext_id):
         print("[goBilda] GoBilda startup")
 
@@ -107,9 +110,11 @@ class GoBildaExtension(omni.ext.IExt):
         """
         ext_manager = omni.kit.app.get_app().get_extension_manager()
         ext_path = ext_manager.get_extension_path(self.extensionID)
-        primSourceLocation = ext_path + "/data/models/_" + component + "_allVariants.usda"
-        omni.kit.commands.execute("CreateReference",
-                                  path_to=Sdf.Path(f"/World/Components/{component}"),
+
+        path = f"{ext_path}/data/models/{component}/_"
+        primSourceLocation = path + component + "_allVariants.usda"
+        omni.kit.commands.execute("CreatePayload",
+                                  path_to=Sdf.Path(f"/World/Components/_{component}"),
                                   # Prim path for where to create the reference
                                   asset_path=primSourceLocation,
                                   # The file path to reference. Relative paths are accepted too.
