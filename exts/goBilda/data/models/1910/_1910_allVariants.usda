@@ -1,0 +1,40 @@
+#usda 1.0
+(
+    defaultPrim = "_1910"
+)
+
+def "_1910" (
+    variants = {
+        string _1910_Variants = "_0024_1033"
+    }
+    prepend variantSets = "_1910_Variants"
+)
+{
+    variantSet "_1910_Variants" = {
+        "_0024_1033" {
+            def "_0024_1033" (
+                prepend references = @./_1910_0024_1033.usda@
+            )
+            {
+            }
+
+        }
+        "_0025_0816" {
+            def "_0025_0816" (
+                prepend references = @./_1910_0025_0816.usda@
+            )
+            {
+            }
+
+        }
+        "_0025_1033" {
+            def "_0025_1033" (
+                prepend references = @./_1910_0025_1033.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+

@@ -1,0 +1,104 @@
+#usda 1.0
+(
+    defaultPrim = "_2102"
+)
+
+def "_2102" (
+    variants = {
+        string _2102_Variants = "0008_0110"
+    }
+    prepend variantSets = "_2102_Variants"
+)
+{
+    variantSet "_2102_Variants" = {
+        "_0008_0110" {
+            def "_0008_0110" (
+                prepend references = @./_2102_0008_0110.usda@
+            )
+            {
+            }
+
+        }
+        "_0008_0120" {
+            def "_0008_0120" (
+                prepend references = @./_2102_0008_0120.usda@
+            )
+            {
+            }
+
+        }
+        "_0012_0080" {
+            def "_0012_0080" (
+                prepend references = @./_2102_0012_0080.usda@
+            )
+            {
+            }
+
+        }
+        "_0012_0100" {
+            def "_0012_0100" (
+                prepend references = @./_2102_0012_0100.usda@
+            )
+            {
+            }
+
+        }
+        "_0012_0120" {
+            def "_0012_0120" (
+                prepend references = @./_2102_0012_0120.usda@
+            )
+            {
+            }
+
+        }
+        "_0012_0140" {
+            def "_0012_0140" (
+                prepend references = @./_2102_0012_0140.usda@
+            )
+            {
+            }
+
+        }
+        "_0012_0160" {
+            def "_0012_0160" (
+                prepend references = @./_2102_0012_0160.usda@
+            )
+            {
+            }
+
+        }
+        "_0012_0180" {
+            def "_0012_0180" (
+                prepend references = @./_2102_0012_0180.usda@
+            )
+            {
+            }
+
+        }
+        "_0012_0200" {
+            def "_0012_0200" (
+                prepend references = @./_2102_0012_0200.usda@
+            )
+            {
+            }
+
+        }
+        "_0012_0300" {
+            def "_0012_0300" (
+                prepend references = @./_2102_0012_0300.usda@
+            )
+            {
+            }
+
+        }
+        "_0012_0600" {
+            def "_0012_0600" (
+                prepend references = @./_2102_0012_0600.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+

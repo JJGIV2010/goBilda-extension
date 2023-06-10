@@ -1,0 +1,64 @@
+#usda 1.0
+(
+    defaultPrim = "_2000"
+)
+
+def "_2000" (
+    variants = {
+        string _2000_Variants = "_0002"
+    }
+    prepend variantSets = "_2000_Variants"
+)
+{
+    variantSet "_2000_Variants" = {
+        "_0002" {
+            def "_0002" (
+                prepend references = @./_2000_0002.usda@
+            )
+            {
+            }
+
+        }
+        "_0003" {
+            def "_0003" (
+                prepend references = @./_2000_0003.usda@
+            )
+            {
+            }
+
+        }
+        "_0004" {
+            def "_0004" (
+                prepend references = @./_2000_0004.usda@
+            )
+            {
+            }
+
+        }
+        "_0502" {
+            def "_0004" (
+                prepend references = @./_2000_0502.usda@
+            )
+            {
+            }
+
+        }
+        "_0503" {
+            def "_0004" (
+                prepend references = @./_2000_0503.usda@
+            )
+            {
+            }
+
+        }
+        "_0504" {
+            def "_0504" (
+                prepend references = @./_2000_0504.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+

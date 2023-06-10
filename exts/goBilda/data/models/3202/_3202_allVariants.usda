@@ -1,0 +1,40 @@
+#usda 1.0
+(
+    defaultPrim = "_3202"
+)
+
+def "_3202" (
+    variants = {
+        string _3202_Variants = "_2401"
+    }
+    prepend variantSets = "_3202_Variants"
+)
+{
+    variantSet "_3202_Variants" = {
+        "_2401" {
+            def "_2401" (
+                prepend references = @./_3202_2401.usda@
+            )
+            {
+            }
+
+        }
+        "_2501" {
+            def "_2501" (
+                prepend references = @./_3202_2501.usda@
+            )
+            {
+            }
+
+        }
+        "_2502" {
+            def "_2502" (
+                prepend references = @./_3202_2502.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+

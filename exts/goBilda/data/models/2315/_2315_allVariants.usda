@@ -1,0 +1,32 @@
+#usda 1.0
+(
+    defaultPrim = "_2110"
+)
+
+def "_2110" (
+    variants = {
+        string _2110_Variants = "_1006_0030"
+    }
+    prepend variantSets = "_2110_Variants"
+)
+{
+    variantSet "_2110_Variants" = {
+        "_1006_0030" {
+            def "_1006_0030" (
+                prepend references = @./_2110_1006_0030.usda@
+            )
+            {
+            }
+
+        }
+        "_4008_0030" {
+            def "_4008_0030" (
+                prepend references = @./_2110_4008_0030.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+

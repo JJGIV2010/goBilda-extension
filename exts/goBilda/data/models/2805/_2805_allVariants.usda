@@ -1,0 +1,32 @@
+#usda 1.0
+(
+    defaultPrim = "_2805"
+)
+
+def "_2805" (
+    variants = {
+        string _2805_Variants = "_0038"
+    }
+    prepend variantSets = "_2805_Variants"
+)
+{
+    variantSet "_2805_Variants" = {
+        "_0038" {
+            def "_0038" (
+                prepend references = @./_2805_0038.usda@
+            )
+            {
+            }
+
+        }
+        "_0108" {
+            def "_0108" (
+                prepend references = @./_2805_0108.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+

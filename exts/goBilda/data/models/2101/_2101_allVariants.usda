@@ -1,0 +1,152 @@
+#usda 1.0
+(
+    defaultPrim = "_2101"
+)
+
+def "_2101" (
+    variants = {
+        string _2101_Variants = "_0020"
+    }
+    prepend variantSets = "_2101_Variants"
+)
+{
+    variantSet "_2101_Variants" = {
+        "_0020" {
+            def "_0020" (
+                prepend references = @./_2101_0020.usda@
+            )
+            {
+            }
+
+        }
+        "_0030" {
+            def "_0030" (
+                prepend references = @./_2101_0030.usda@
+            )
+            {
+            }
+
+        }
+        "_0040" {
+            def "_0040" (
+                prepend references = @./_2101_0040.usda@
+            )
+            {
+            }
+
+        }
+        "_0050" {
+            def "_0050" (
+                prepend references = @./_2101_0050.usda@
+            )
+            {
+            }
+
+        }
+        "_0060" {
+            def "_0060" (
+                prepend references = @./_2101_0060.usda@
+            )
+            {
+            }
+
+        }
+        "_0070" {
+            def "_0070" (
+                prepend references = @./_2101_0070.usda@
+            )
+            {
+            }
+
+        }
+        "_0080" {
+            def "_0080" (
+                prepend references = @./_2101_0080.usda@
+            )
+            {
+            }
+
+        }
+        "_0090" {
+            def "_0090" (
+                prepend references = @./_2101_0090.usda@
+            )
+            {
+            }
+
+        }
+        "_0100" {
+            def "_0100" (
+                prepend references = @./_2101_0100.usda@
+            )
+            {
+            }
+
+        }
+        "_0120" {
+            def "_0120" (
+                prepend references = @./_2101_0120.usda@
+            )
+            {
+            }
+
+        }
+        "_0140" {
+            def "_0140" (
+                prepend references = @./_2101_0140.usda@
+            )
+            {
+            }
+
+        }
+        "_0160" {
+            def "_0160" (
+                prepend references = @./_2101_0160.usda@
+            )
+            {
+            }
+
+        }
+        "_0180" {
+            def "_0180" (
+                prepend references = @./_2101_0180.usda@
+            )
+            {
+            }
+
+        }
+        "_0200" {
+            def "_0200" (
+                prepend references = @./_2101_0200.usda@
+            )
+            {
+            }
+
+        }
+        "_0220" {
+            def "_0220" (
+                prepend references = @./_2101_0220.usda@
+            )
+            {
+            }
+
+        }
+        "_0260" {
+            def "_0260" (
+                prepend references = @./_2101_0260.usda@
+            )
+            {
+            }
+
+        }
+        "_0300" {
+            def "_0300" (
+                prepend references = @./_2101_0300.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+

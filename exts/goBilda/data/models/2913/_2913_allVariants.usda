@@ -1,0 +1,32 @@
+#usda 1.0
+(
+    defaultPrim = "_2913"
+)
+
+def "_2913" (
+    variants = {
+        string _2913_Variants = "_0004_0241"
+    }
+    prepend variantSets = "_2913_Variants"
+)
+{
+    variantSet "_2913_Variants" = {
+        "_0004_0241" {
+            def "_0004_0241" (
+                prepend references = @./_2913_0004_0241.usda@
+            )
+            {
+            }
+
+        }
+        "_0004_0294" {
+            def "_0004_0294" (
+                prepend references = @./_2913_0004_0294.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+

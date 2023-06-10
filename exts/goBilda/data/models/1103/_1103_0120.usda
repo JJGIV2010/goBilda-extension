@@ -42,7 +42,7 @@ def Xform "Root"
         double3 xformOp:translate = (0, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
 
-        def Mesh "_103_0015_121" (
+        def Mesh "_103_0015_120" (
             kind = "model"
         )
         {

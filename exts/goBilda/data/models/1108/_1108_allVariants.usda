@@ -1,0 +1,32 @@
+#usda 1.0
+(
+    defaultPrim = "_1108"
+)
+
+def "_1108" (
+    variants = {
+        string _1108_Variants = "_0001"
+    }
+    prepend variantSets = "_1108_Variants"
+)
+{
+    variantSet "_1108_Variants" = {
+        "_0001" {
+            def "_0001" (
+                prepend references = @./_1108_0001.usda@
+            )
+            {
+            }
+
+        }
+        "_0002" {
+            def "_0002" (
+                prepend references = @./_1108_0002.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+
