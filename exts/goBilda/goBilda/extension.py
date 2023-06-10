@@ -55,42 +55,27 @@ class GoBildaExtension(omni.ext.IExt):
                     img = ui.Image(alignment=ui.Alignment.CENTER)
                     img.source_url = ext_path + "/data/goBildaLogo.png"
                 ui.Label("""
-                This is an unofficial extension for goBilda parts. goBilda is 
-                goBilda is an open source robotics prototyping platform that 
-                can be used to build robots, machines, and more.
-
-                This extension allows you to import goBilda parts into your
-                Omniverse scene and get some useful information about the assembly,
-                as well as help you simulate the assembly, and make sure that
-                the parts you are using are compatible with each other through
-                simulation. This can save you time and $$$.
-
-                Here is the official goBilda website:
-                https://www.gobilda.com/
-
-                Steps to get you started building:
-
-                1. If you are reading this you already enabled the extension.
-                You can always reset this extension by disabling and enabling
-                the extension if you need to. 
-
-                2. Using the file menu bar go to:
-                goBilda > parts > select a part
-
-                3. The part will be added to the scene.
-
-                4. You can also use the goBilda menu to get more useful information
-                about the scene. 
-
-                5. Feel free to add physics, materials and attributes that might
-                be useful to your project to each individual part. 
-
-                6. If you need to update or import a new step file for a new part
-                you can do so by going to the goBilda menu and selecting the import
-                step file option.
-
-                Thanks and happy building!
-
+                Welcome to the unofficial extension for goBilda parts! If you're unfamiliar, goBilda is an open-source robotics prototyping platform perfect for designing robots, machines, and much more.
+        
+                With our extension, you can seamlessly integrate goBilda parts into your Omniverse scene. This tool provides valuable insight into your assembly, aids in simulating your design, and even ensures part compatibility via simulation. The result? A smoother design process that saves you both time and money.
+                
+                Check out the official goBilda website for more information: https://www.gobilda.com/
+                
+                Ready to start building? Follow these simple steps:
+                
+                Congratulations, you've already enabled the extension! If necessary, resetting the extension is as easy as disabling and enabling it again.
+                
+                To select a part, navigate through the file menu bar: goBilda > parts > select a part.
+                
+                Your chosen part will be incorporated into the scene.
+                
+                For additional details about the scene, feel free to explore the goBilda menu.
+                
+                Customize each part to fit your project needs by adding physics, materials, and attributes as needed.
+                
+                To update or import a new step file for a fresh part, simply head over to the goBilda menu and choose the import step file option.
+                
+                Thanks for checking out the extension. Now, let the fun begin. Happy building!
                 """, textwrap=True)
 
     def stageInfoWindow(self):
