@@ -17,7 +17,7 @@ class GoBildaExtension(omni.ext.IExt):
 
         # Register a menu item under the "Extensions" menu
         self.extensionID = ext_id
-        self.aboutWindow()
+        # self.aboutWindow()
         self.init_menu(ext_id)
         self.stage = omni.usd.get_context().get_stage()
 
@@ -26,6 +26,20 @@ class GoBildaExtension(omni.ext.IExt):
 
     # Menu name.
     _menu_name = "goBilda"
+
+    def comingSoon(self):
+        self._window = ui.Window("goBilda Extension", width=500, textwrap=True)
+        with self._window.frame:
+            with ui.VStack():
+                #######  Image : Omniverse logo ########
+                with ui.HStack():
+                    ext_manager = omni.kit.app.get_app().get_extension_manager()
+                    ext_path = ext_manager.get_extension_path(self.extensionID)
+                    img = ui.Image(alignment=ui.Alignment.CENTER)
+                    img.source_url = ext_path + "/data/goBildaLogo.png"
+                ui.Label("""
+                Coming soon!
+                """, textwrap=True)
 
     def aboutWindow(self):
         self._window = ui.Window("goBilda Extension", width=500, textwrap=True)
@@ -93,7 +107,7 @@ class GoBildaExtension(omni.ext.IExt):
         """
         ext_manager = omni.kit.app.get_app().get_extension_manager()
         ext_path = ext_manager.get_extension_path(self.extensionID)
-        primSourceLocation = ext_path + "/data/models/" + component + ".usd"
+        primSourceLocation = ext_path + "/data/models/_" + component + "_allVariants.usda"
         omni.kit.commands.execute("CreateReference",
                                   path_to=Sdf.Path(f"/World/Components/{component}"),
                                   # Prim path for where to create the reference
@@ -141,52 +155,41 @@ class GoBildaExtension(omni.ext.IExt):
             omni.kit.menu.utils.rebuild_menus()
 
         self.channelSubMenu = [
-            MenuItemDescription(name="UChannel", onclick_fn=lambda: self.addToStage("UChannel")),
-            MenuItemDescription(name="LowUChannel", onclick_fn=lambda: self.addToStage("LowUChannel")),
+            MenuItemDescription(name="UChannel", onclick_fn=lambda: self.addToStage("1120")),
+            MenuItemDescription(name="LowUChannel", onclick_fn=lambda: self.addToStage("1121")),
         ]
 
         self.goRailSubMenu = [
-            MenuItemDescription(name="GoRailClosed", onclick_fn=lambda: self.addToStage("GoRailClosed")),
-            MenuItemDescription(name="GoRailOpen", onclick_fn=lambda: self.addToStage("GoRailOpen")),
+            MenuItemDescription(name="GoRailClosed", onclick_fn=lambda: self.addToStage("1109")),
+            MenuItemDescription(name="GoRailOpen", onclick_fn=lambda: self.addToStage("1118")),
         ]
 
         self.beamsSubMenu = [
-            MenuItemDescription(name="U Beams", onclick_fn=lambda: self.addToStage("uBeam")),
-            MenuItemDescription(name="L Beams", onclick_fn=lambda: self.addToStage("lBeam")),
-            MenuItemDescription(name="Flat Beams", onclick_fn=lambda: self.addToStage("flatBeam")),
-            MenuItemDescription(name="Square Beams", onclick_fn=lambda: self.addToStage("squareBeam")),
-            MenuItemDescription(name="Shaft Beams", onclick_fn=lambda: self.addToStage("shaftBeam")),
+            MenuItemDescription(name="U Beams", onclick_fn=lambda: self.addToStage("1101")),
+            MenuItemDescription(name="L Beams", onclick_fn=lambda: self.addToStage("1103")),
+            MenuItemDescription(name="Flat Beams", onclick_fn=lambda: self.addToStage("1102")),
+            MenuItemDescription(name="Square Beams", onclick_fn=lambda: self.addToStage("1106")),
+            MenuItemDescription(name="Shaft Beams", onclick_fn=lambda: self.addToStage("1119")),
         ]
 
+
         self.shaftsAndTubingSubMenu = [
-            MenuItemDescription(name="Steel Round", onclick_fn=lambda: self.addToStage("uBeam")),
-            MenuItemDescription(name="Steel D", onclick_fn=lambda: self.addToStage("lBeam")),
-            MenuItemDescription(name="Steel Rex", onclick_fn=lambda: self.addToStage("flatBeam")),
-            MenuItemDescription(name="Aluminum Rex", onclick_fn=lambda: self.addToStage("squareBeam")),
-            MenuItemDescription(name="Hub Shafts", onclick_fn=lambda: self.addToStage("shaftBeam")),
-            MenuItemDescription(name="Aluminum Tubing", onclick_fn=lambda: self.addToStage("uBeam")),
-            MenuItemDescription(name="goTube", onclick_fn=lambda: self.addToStage("lBeam")),
-            MenuItemDescription(name="goRail", onclick_fn=lambda: self.addToStage("flatBeam")),
-            MenuItemDescription(name="Flanged Aluminum", onclick_fn=lambda: self.addToStage("squareBeam")),
-            MenuItemDescription(name="Aluminum Lead Screw Tubing", onclick_fn=lambda: self.addToStage("shaftBeam")),
-            MenuItemDescription(name="Servo Tube Shaft", onclick_fn=lambda: self.addToStage("shaftBeam")),
-            MenuItemDescription(name="Standoffs & Spacers", onclick_fn=lambda: self.addToStage("shaftBeam")),
-            MenuItemDescription(name="Rex Standoffs", onclick_fn=lambda: self.addToStage("shaftBeam")),
+            MenuItemDescription(name="Steel Round", onclick_fn=lambda: self.addToStage("2100")),
+            MenuItemDescription(name="Steel D", onclick_fn=lambda: self.addToStage("2101")),
+            MenuItemDescription(name="Steel Rex", onclick_fn=lambda: self.addToStage("2102")),
+            MenuItemDescription(name="Aluminum Rex", onclick_fn=lambda: self.addToStage("2104")),
+            MenuItemDescription(name="Hub Shafts", onclick_fn=lambda: self.addToStage("2110")),
+            MenuItemDescription(name="Aluminum Tubing", onclick_fn=lambda: self.addToStage("4100")),
+            MenuItemDescription(name="goTube", onclick_fn=lambda: self.addToStage("4103")),
+            MenuItemDescription(name="goRail", sub_menu=self.goRailSubMenu)
         ]
 
         self.mountsSubMenu = [
-            MenuItemDescription(name="Block Mounts", onclick_fn=lambda: self.addToStage("blockMounts")),
-            MenuItemDescription(name="Dual Block Mounts", onclick_fn=lambda: self.addToStage("dualBlockMounts")),
-            MenuItemDescription(name="Quad Block Pattern Mounts", onclick_fn=lambda: self.addToStage("quadBlockMounts")),
-            MenuItemDescription(name="One Side Two Post Pattern", onclick_fn=lambda: self.addToStage("oneSideTwoPostPatternMounts")),
-            MenuItemDescription(name="Two Side Two Post Pattern", onclick_fn=lambda: self.addToStage("twoSideTwoPostPatternMounts")),
-            MenuItemDescription(name="Angle Pattern", onclick_fn=lambda: self.addToStage("anglePatternMounts")),
-            MenuItemDescription(name="Gusseted Angle Pattern", onclick_fn=lambda: self.addToStage("gussetedAnglePatternMounts")),
-            MenuItemDescription(name="Flat Mounts", onclick_fn=lambda: self.addToStage("flatMounts")),
-            MenuItemDescription(name="Surface Mounts", onclick_fn=lambda: self.addToStage("surfaceMounts")),
-            MenuItemDescription(name="Clamping Mounts", onclick_fn=lambda: self.addToStage("clampingMounts")),
-            MenuItemDescription(name="Motor Mounts", onclick_fn=lambda: self.addToStage("motorMounts")),
-            MenuItemDescription(name="Servo Mounts", onclick_fn=lambda: self.addToStage("servoMounts")),
+            MenuItemDescription(name="Block Mounts", onclick_fn=lambda: self.addToStage("1203")),
+            MenuItemDescription(name="Dual Block Mounts", onclick_fn=lambda: self.addToStage("1205")),
+            MenuItemDescription(name="One Side Two Post Pattern", onclick_fn=lambda: self.addToStage("1400")),
+            MenuItemDescription(name="Two Side Two Post Pattern", onclick_fn=lambda: self.addToStage("1401")),
+            MenuItemDescription(name="Gusseted Angle Pattern", onclick_fn=lambda: self.addToStage("1204"))
             ]
 
 
@@ -195,75 +198,41 @@ class GoBildaExtension(omni.ext.IExt):
             MenuItemDescription(name="goRail", sub_menu=self.goRailSubMenu),
             MenuItemDescription(name="Beams", sub_menu=self.beamsSubMenu),
             MenuItemDescription(name="Shafting & Tubing", sub_menu=self.shaftsAndTubingSubMenu),
-            MenuItemDescription(name="Mounts", sub_menu=self.mountsSubMenu),
-            MenuItemDescription(name="Clamping Mounts", onclick_fn=lambda: self.addToStage("clampingMounts")),
-            MenuItemDescription(name="Grid Plates", onclick_fn=lambda: self.addToStage("gridPlates")),
-            MenuItemDescription(name="Pattern Plates", onclick_fn=lambda: self.addToStage("patternPlates")),
-            MenuItemDescription(name="Brackets", onclick_fn=lambda: self.addToStage("brackets")),
-            MenuItemDescription(name="Base Plates", onclick_fn=lambda: self.addToStage("basePlates")),
-            MenuItemDescription(name="Pattern Adaptors", onclick_fn=lambda: self.addToStage("patternAdaptors")),
-            MenuItemDescription(name="Pattern Spacers", onclick_fn=lambda: self.addToStage("patternSpacers")),
-            MenuItemDescription(name="Standoffs & Spacers", onclick_fn=lambda: self.addToStage("standoffsAndSpacers")),
-            MenuItemDescription(name="Threaded Plates", onclick_fn=lambda: self.addToStage("threadedPlates")),
-            MenuItemDescription(name="Hinges", onclick_fn=lambda: self.addToStage("hinges")),
+            MenuItemDescription(name="Mounts", sub_menu=self.mountsSubMenu)
         ]
         self.motionSubMenu = [
-            MenuItemDescription(name="Motors", onclick_fn=lambda: self.addToStage("motors")),
-            MenuItemDescription(name="Servos", onclick_fn=lambda: self.addToStage("servos")),
-            MenuItemDescription(name="Linear Servos", onclick_fn=lambda: self.addToStage("linearServos")),
-            MenuItemDescription(name="Wheels & Tires", onclick_fn=lambda: self.addToStage("wheelsAndTires")),
-            MenuItemDescription(name="Tracks", onclick_fn=lambda: self.addToStage("tracks")),
-            MenuItemDescription(name="Gears", onclick_fn=lambda: self.addToStage("gears")),
-            MenuItemDescription(name="Sprockets & Chain", onclick_fn=lambda: self.addToStage("sprocketsAndChain")),
-            MenuItemDescription(name="Timing Belts & Pulleys", onclick_fn=lambda: self.addToStage("timingBeltsAndPulleys")),
-            MenuItemDescription(name="Round Belts & Pulleys", onclick_fn=lambda: self.addToStage("roundBeltsAndPulleys")),
-            MenuItemDescription(name="Cable & Pulleys", onclick_fn=lambda: self.addToStage("cableAndPulleys")),
-            MenuItemDescription(name="Lead Screws", onclick_fn=lambda: self.addToStage("leadScrews")),
-            MenuItemDescription(name="Linear Slides", onclick_fn=lambda: self.addToStage("linearSlides")),
-            MenuItemDescription(name="Linear Motion Guides", onclick_fn=lambda: self.addToStage("linearMotionGuides")),
-            MenuItemDescription(name="Hubs", onclick_fn=lambda: self.addToStage("hubs")),
-            MenuItemDescription(name="Bearings", onclick_fn=lambda: self.addToStage("bearings")),
-            MenuItemDescription(name="Shafting & Tubing", onclick_fn=lambda: self.addToStage("shaftingAndTubing")),
-            MenuItemDescription(name="Standoffs & Spacers", onclick_fn=lambda: self.addToStage("standoffsAndSpacers")),
-            MenuItemDescription(name="Shaft Spacers & Shims", onclick_fn=lambda: self.addToStage("shaftsSpacersAndShims")),
-            MenuItemDescription(name="Collars", onclick_fn=lambda: self.addToStage("collars")),
-            MenuItemDescription(name="Couplers", onclick_fn=lambda: self.addToStage("couplers")),
-            MenuItemDescription(name="Universal Joints", onclick_fn=lambda: self.addToStage("universalJoints")),
-            MenuItemDescription(name="Shocks", onclick_fn=lambda: self.addToStage("shocks")),
-            MenuItemDescription(name="Push Arms", onclick_fn=lambda: self.addToStage("pushArms")),
-            MenuItemDescription(name="Linkages & Threaded Rods", onclick_fn=lambda: self.addToStage("linkagesAndThreadedRods")),
-            MenuItemDescription(name="Hinges", onclick_fn=lambda: self.addToStage("hinges"))
+            MenuItemDescription(name="Servos", onclick_fn=lambda: self.addToStage("2000"))
         ]
         self.electronicsSubMenu = [
-            MenuItemDescription(name="Motor Controllers", onclick_fn=lambda: self.addToStage("motorControllers")),
-            MenuItemDescription(name="Servo Electronics", onclick_fn=lambda: self.addToStage("servoElectronics")),
-            MenuItemDescription(name="Signal Mixers", onclick_fn=lambda: self.addToStage("signalMixers")),
-            MenuItemDescription(name="Batteries", onclick_fn=lambda: self.addToStage("batteries")),
-            MenuItemDescription(name="Voltage Regulators", onclick_fn=lambda: self.addToStage("voltageRegulators")),
-            MenuItemDescription(name="Power Distribution Boards", onclick_fn=lambda: self.addToStage("powerDistributionBoards")),
-            MenuItemDescription(name="Wiring", onclick_fn=lambda: self.addToStage("wiring")),
-            MenuItemDescription(name="Switches", onclick_fn=lambda: self.addToStage("switches")),
-            MenuItemDescription(name="Lights", onclick_fn=lambda: self.addToStage("lights")),
+            # MenuItemDescription(name="Motor Controllers", onclick_fn=lambda: self.addToStage("motorControllers")),
+            # MenuItemDescription(name="Servo Electronics", onclick_fn=lambda: self.addToStage("servoElectronics")),
+            # MenuItemDescription(name="Signal Mixers", onclick_fn=lambda: self.addToStage("signalMixers")),
+            # MenuItemDescription(name="Batteries", onclick_fn=lambda: self.addToStage("batteries")),
+            # MenuItemDescription(name="Voltage Regulators", onclick_fn=lambda: self.addToStage("voltageRegulators")),
+            # MenuItemDescription(name="Power Distribution Boards", onclick_fn=lambda: self.addToStage("powerDistributionBoards")),
+            # MenuItemDescription(name="Wiring", onclick_fn=lambda: self.addToStage("wiring")),
+            # MenuItemDescription(name="Switches", onclick_fn=lambda: self.addToStage("switches")),
+            # MenuItemDescription(name="Lights", onclick_fn=lambda: self.addToStage("lights")),
         ]
         self.hardwareSubMenu = [
-            MenuItemDescription(name="Screws", onclick_fn=lambda: self.addToStage("screws")),
-            MenuItemDescription(name="M4 Threaded Rods", onclick_fn=lambda: self.addToStage("threadedRods")),
-            MenuItemDescription(name="Washers", onclick_fn=lambda: self.addToStage("washers")),
-            MenuItemDescription(name="Shaft Spacers & Shims", onclick_fn=lambda: self.addToStage("sahftSpacersAndShims")),
-            MenuItemDescription(name="Hole Reducers", onclick_fn=lambda: self.addToStage("holeReducers")),
-            MenuItemDescription(name="Nuts", onclick_fn=lambda: self.addToStage("nuts")),
-            MenuItemDescription(name="Springs", onclick_fn=lambda: self.addToStage("springs")),
-            MenuItemDescription(name="Threaded Plates", onclick_fn=lambda: self.addToStage("threadedPlates")),
-            MenuItemDescription(name="Standoffs & Spacers", onclick_fn=lambda: self.addToStage("standoffsAndSpacers")),
-            MenuItemDescription(name="Collars", onclick_fn=lambda: self.addToStage("collars")),
-            MenuItemDescription(name="Hinges", onclick_fn=lambda: self.addToStage("hinges")),
-            MenuItemDescription(name="Tools", onclick_fn=lambda: self.addToStage("tools")),
-            MenuItemDescription(name="Flexible Tubing", onclick_fn=lambda: self.addToStage("flexibleTubing")),
-            MenuItemDescription(name="Cable", onclick_fn=lambda: self.addToStage("cable")),
-            MenuItemDescription(name="Wire Management", onclick_fn=lambda: self.addToStage("wireManagement")),
-            MenuItemDescription(name="Grommets", onclick_fn=lambda: self.addToStage("grommets")),
-            MenuItemDescription(name="Rubber Feet", onclick_fn=lambda: self.addToStage("rubberFeet")),
-            MenuItemDescription(name="Magnets", onclick_fn=lambda: self.addToStage("magnets"))
+            # MenuItemDescription(name="Screws", onclick_fn=lambda: self.addToStage("screws")),
+            # MenuItemDescription(name="M4 Threaded Rods", onclick_fn=lambda: self.addToStage("threadedRods")),
+            # MenuItemDescription(name="Washers", onclick_fn=lambda: self.addToStage("washers")),
+            # MenuItemDescription(name="Shaft Spacers & Shims", onclick_fn=lambda: self.addToStage("sahftSpacersAndShims")),
+            # MenuItemDescription(name="Hole Reducers", onclick_fn=lambda: self.addToStage("holeReducers")),
+            # MenuItemDescription(name="Nuts", onclick_fn=lambda: self.addToStage("nuts")),
+            # MenuItemDescription(name="Springs", onclick_fn=lambda: self.addToStage("springs")),
+            # MenuItemDescription(name="Threaded Plates", onclick_fn=lambda: self.addToStage("threadedPlates")),
+            # MenuItemDescription(name="Standoffs & Spacers", onclick_fn=lambda: self.addToStage("standoffsAndSpacers")),
+            # MenuItemDescription(name="Collars", onclick_fn=lambda: self.addToStage("collars")),
+            # MenuItemDescription(name="Hinges", onclick_fn=lambda: self.addToStage("hinges")),
+            # MenuItemDescription(name="Tools", onclick_fn=lambda: self.addToStage("tools")),
+            # MenuItemDescription(name="Flexible Tubing", onclick_fn=lambda: self.addToStage("flexibleTubing")),
+            # MenuItemDescription(name="Cable", onclick_fn=lambda: self.addToStage("cable")),
+            # MenuItemDescription(name="Wire Management", onclick_fn=lambda: self.addToStage("wireManagement")),
+            # MenuItemDescription(name="Grommets", onclick_fn=lambda: self.addToStage("grommets")),
+            # MenuItemDescription(name="Rubber Feet", onclick_fn=lambda: self.addToStage("rubberFeet")),
+            # MenuItemDescription(name="Magnets", onclick_fn=lambda: self.addToStage("magnets"))
         ]
         self.stageToolsSubMenu = [
             MenuItemDescription(name="Stage Info Window", onclick_fn=lambda: self.stageInfoWindow()),
